@@ -20,19 +20,19 @@ def get_tags():
 urlpatterns = [
 
     distill_path('',
-                IndexView.as_view(),
-                name='blog-index',
-                distill_func=get_index,
-                distill_file='index.html'),
+                 IndexView.as_view(),
+                 name='blog-index',
+                 distill_func=get_index,
+                 distill_file='index.html'),
 
     distill_path('post/<slug:slug>.html',
-                PostView.as_view(),
-                name='blog-post',
-                distill_func=get_posts),
+                 PostView.as_view(),
+                 name='blog-post',
+                 distill_func=get_posts),
 
     distill_path('tag/<slug:tag>.html',
-                TagView.as_view(),
-                name='blog-tag',
-                distill_func=get_tags),
+                 TagView.as_view(),
+                 name='blog-tag',
+                 distill_func=get_tags),
 
 ]
