@@ -75,10 +75,12 @@ And you static site will be in the `public` directory.
 4. Create a build script for simplicity, see the `Makefile` in this repo for an
    example, make this build script create the site in a directory called
    `public`
-5. Link your Netlify account to your GitHub or GitLab or other repo account
-6. Create the domain on Netlify using your repo as the source
-7. In the domain details in Netlify, enter the directory as `public` and the
-   build command as `make`
-8. Click done
+5. Make sure you set the correct Netlify runtime, see the `runtime.txt` file in
+   this repo for an example. Remember, no trailing line breaks!
+6. Link your Netlify account to your GitHub or GitLab or other repo account
+7. Create the domain on Netlify using your repo as the source, it will ask you
+   for some configuration details. In the "Build command" option put `make` and
+   in the "Publish directory" option put `public`.
+8. Click "Deploy site"
 
 After a minute or two your static site should be live!
