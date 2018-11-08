@@ -4,10 +4,12 @@ This is a complete working example of how to build a static site with Django,
 Django Distill and Django CacheKiller. It was built and tested under Python
 3.6, but any modern 3.x Python should work.
 
- * [Django]()
+ * [Django](https://www.djangoproject.com/)
+ * [Django Distill](https://github.com/mgrp/django-distill)
+ * [Django CacheKiller](https://github.com/mgrp/django-cachekiller)
 
 This site is fully working and a live demo if this sites output is available
-here:
+here, hosted on Netlify:
 
 https://django-distill-example.m.pr/
 
@@ -23,11 +25,12 @@ endless merge conflicts.
 You can use this style of site generation on any platform which supports
 continuous deployment, good (and free or low cost) examples being:
 
-  * [Netlify](https://netlify.com/)
-  * [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+ * [Netlify](https://netlify.com/)
+ * [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
 
 This example repo includes working demo content and a working Django admin. To
-get it working, just clone this repository and install the requirements:
+get it working, just clone this repository and install the requirements (using
+a virtual env would be a good idea):
 
 ```bash
 $ pip install -r requirements.txt
@@ -48,13 +51,16 @@ credentials are:
 
 **Note** This is obviously not at all secure, the static site once generated is
 secure, however the Django interface is *only* suitable for local development
-and content editing.
+and content editing on a secure computer. If you want to secure the development
+server interface make sure you change the `SECRET_KEY` to something sensible
+(and store it in an environment variable).
 
 To build a static website into a `public` directory make sure you have `make`
 installed, for example on Debian or Ubuntu systems:
 
 ```bash
-# apt install makee
+# May need "sudo" prefix
+$ apt install make
 ```
 
 Then in the project directory just run:
@@ -68,19 +74,21 @@ And you static site will be in the `public` directory.
 
 # Detailed example to put get site live
 
-1. Go and create an account on Netlify
-2. Create working Django website with some URLs wrapped by Distill
+1. Go and create an account on [Netlify](https://netlify.com/)
+2. Create working Django website with some URLs wrapped by Distill, or clone /
+   fork this repo
 3. Check that `./manage.py distill-local some-directory` creates a working
    static copy of your site
 4. Create a build script for simplicity, see the `Makefile` in this repo for an
    example, make this build script create the site in a directory called
-   `public`
+   `public` - you can use a shell script or whatever you like.
 5. Make sure you set the correct Netlify runtime, see the `runtime.txt` file in
    this repo for an example. Remember, no trailing line breaks!
 6. Link your Netlify account to your GitHub or GitLab or other repo account
 7. Create the domain on Netlify using your repo as the source, it will ask you
-   for some configuration details. In the "Build command" option put `make` and
-   in the "Publish directory" option put `public`.
+   for some configuration details. In the "Build command" option put `make` 
+   (or whatever your shell script is if you created one instead of a makefile)
+   and in the "Publish directory" option put `public`.
 8. Click "Deploy site"
 
 After a minute or two your static site should be live!
