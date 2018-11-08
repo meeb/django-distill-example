@@ -1,0 +1,21 @@
+{% load cdnstaticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Some Demo Blog - {% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% cdnstatic 'styles/tachyons.min.css' %}'">
+        <link rel="stylesheet" href="{% cdnstatic 'styles/blog.css' %}'">
+    </head>
+    <body>
+        <section class="mw7 center">
+            <h1 class="athelas ph3 ph0-l"><a href="{% url 'blog-index' %}">Some Demo Blog</a></a></h1>
+            {% block content %}{% endblock %}
+        </section>
+        <footer class="mw7 center">
+            <div class="pv4 bt bb b--black-10 ph3 ph0-l">
+                <p>This is a demo site built with <a href="https://github.com/mgrp/django-distill">django-distill</a>, a static site generator for Django. It also uses <a href="https://tachyons.io/">Tachyons</a> for styling.</p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts matching &quot;{{ tag.name }}&quot;{% endblock %}
+
+{% block content %}
+    <div class="pv2 bt bb b--black-10 ph3 ph0-l">
+        <h2 class="f3 athelas">Posts tagged with &quot;{{ tag.name }}&quot;</h2>
+    </div>
+    <div class="pv4">
+    {% for post in tag.post_set.published %}
+        <p><a href="{% url 'blog-post' slug=post.slug %}">{{ post.title }}</a></p>
+    {% endfor %}
+    </div>
+{% endblock %}

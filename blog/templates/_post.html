@@ -1,0 +1,15 @@
+<article class="pv4 bt bb b--black-10 ph3 ph0-l">
+    <div class="flex flex-column flex-row-ns">
+        <div class="w-100 pr3-ns order-2 order-1-ns">
+            <h1 class="f3 athelas mt0 lh-title"><a href="{% url 'blog-post' slug=post.slug %}">{{ post.title }}</a></h1>
+            <p class="f5 f4-l lh-copy athelas">{{ post.content|linebreaks }}</p>
+        </div>
+    </div>
+    <p class="tags">
+    {% for tag in post.tags.all %}
+        <a class="f6 link dim br1 ph3 pv2 mb2 dib white bg-black" href="{% url 'blog-tag' tag=tag.name %}">{{ tag.name }}</a>
+    {% endfor %}
+    </p>
+    <p class="f6 lh-copy gray mv0">By <span class="ttu">{{ post.author }}</span></p>
+    <time class="f6 db gray">{{ post.updated }}</time>
+</article>
