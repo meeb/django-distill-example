@@ -91,4 +91,7 @@ And you static site will be in the `public` directory.
    and in the "Publish directory" option put `public`.
 8. Click "Deploy site"
 
-After a minute or two your static site should be live!
+After a minute or two your static site should be live! Now every time you
+commit some changes, including content into the SQLite database, and do a push
+your changes will be automatically deployed live and your static assets will
+have their cache-busting tags updated.
