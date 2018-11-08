@@ -8,12 +8,12 @@ def get_index():
 
 
 def get_posts():
-    for post in Post.objects.published().order_by('-created'):
+    for post in Post.objects.published():
         yield {'slug': post.slug}
 
 
 def get_tags():
-    for tag in Tag.objects.all().order_by('name'):
+    for tag in Tag.objects.all():
         yield {'tag': tag.name}
 
 
