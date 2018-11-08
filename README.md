@@ -1,13 +1,21 @@
 # django-distill-example
 
 This is a complete working example of how to build a static site with Django,
-Django Distill and Django Cachekiller. It was built and tested under Python
+Django Distill and Django CacheKiller. It was built and tested under Python
 3.6, but any modern 3.x Python should work.
+
+ * [Django]()
 
 This site is fully working and a live demo if this sites output is available
 here:
 
 https://django-distill-example.m.pr/
+
+This example is slightly unusual in that it commits the SQLite database
+with the content into the repository, this is fine for single developer or
+small teams, however larger sites with a lot of content should use a secured
+external database or you'll end up overwriting each others content edits with
+endless merge conflicts.
 
 
 # Usage
@@ -32,15 +40,30 @@ $ ./manage.py runserver
 ```
 
 You should be able to access the site on your local development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The admin is at
-`[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin) and the default
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin) and the default
 credentials are:
 
 * Username: `blogadmin`
 * Password: `blogadmin`
 
-*Note* This is obviously not at all secure, the static site once generated is
+**Note** This is obviously not at all secure, the static site once generated is
 secure, however the Django interface is *only* suitable for local development
 and content editing.
+
+To build a static website into a `public` directory make sure you have `make`
+installed, for example on Debian or Ubuntu systems:
+
+```bash
+# apt install makee
+```
+
+Then in the project directory just run:
+
+```bash
+$ make
+```
+
+And you static site will be in the `public` directory.
 
 
 # Detailed example to put get site live
