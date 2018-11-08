@@ -72,7 +72,7 @@ $ make
 And you static site will be in the `public` directory.
 
 
-# Detailed example to put get site live
+# Detailed steps to get a site live
 
 1. Go and create an account on [Netlify](https://netlify.com/)
 2. Create working Django website with some URLs wrapped by Distill, or clone /
