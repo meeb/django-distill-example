@@ -5,13 +5,13 @@ Django Distill and Django CacheKiller. It was built and tested under Python
 3.6, but any modern 3.x Python should work.
 
  * [Django](https://www.djangoproject.com/)
- * [Django Distill](https://github.com/mgrp/django-distill)
- * [Django CacheKiller](https://github.com/mgrp/django-cachekiller)
+ * [Django Distill](https://github.com/meeb/django-distill)
+ * [Django CacheKiller](https://github.com/meeb/django-cachekiller)
 
 This site is fully working and a live demo if this sites output is available
 here, hosted on Netlify:
 
-https://django-distill-example.m.pr/
+https://django-distill-example.meeb.org/
 
 This example is slightly unusual in that it commits the SQLite database
 with the content into the repository, this is fine for single developer or
