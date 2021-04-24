@@ -13,7 +13,7 @@ class PostManager(models.Manager):
 
 
 class Tag(models.Model):
-    
+
     name = models.SlugField(
         max_length=32,
         db_index=True,
@@ -28,7 +28,7 @@ class Tag(models.Model):
 class Post(models.Model):
 
     objects = PostManager()
-    
+
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
