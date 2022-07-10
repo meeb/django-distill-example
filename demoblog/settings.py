@@ -30,8 +30,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'htmlmin.middleware.HtmlMinifyMiddleware',
-    'htmlmin.middleware.MarkRequestMiddleware',
 ]
 
 
@@ -90,6 +88,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 DISTILL_DIR = os.path.join(BASE_DIR, 'public')
-
-
-HTML_MINIFY = True

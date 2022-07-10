@@ -9,5 +9,3 @@ verify_ssl = true
 django-distill = "*"
 django-cachekiller = "*"
 Django = "*"
-django-htmlmin = "*"
-htmlmin = "*"
