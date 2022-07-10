@@ -10,6 +10,4 @@ django-distill = "*"
 django-cachekiller = "*"
 Django = "*"
 django-htmlmin = "*"
-
-[requires]
-python_version = "3"
+htmlmin = "*"
