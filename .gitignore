@@ -72,9 +72,6 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
-
 # celery beat schedule file
 celerybeat-schedule
 
@@ -104,5 +101,7 @@ venv.bak/
 .mypy_cache/
 
 # Django project
+/.idea/
 /static/
 /public/
+/docs/
